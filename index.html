@@ -1,295 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who Deserves Nepal’s Throne?</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
-
-        /* Background Container */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        /* Individual Backgrounds */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            opacity: 0;
-        }
-
-        .background1 {
-            animation: fade1 20s infinite;
-        }
-
-        .background2 {
-            animation: fade2 20s infinite;
-        }
-
-        .background3 {
-            animation: fade3 20s infinite;
-        }
-
-        .background4 {
-            animation: fade4 20s infinite;
-        }
-
-        /* Fade Animations for Sliding Effect */
-        @keyframes fade1 {
-            0% { opacity: 0; }
-            5% { opacity: 1; }
-            20% { opacity: 1; }
-            25% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-        @keyframes fade2 {
-            20% { opacity: 0; }
-            25% { opacity: 1; }
-            45% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-        @keyframes fade3 {
-            45% { opacity: 0; }
-            50% { opacity: 1; }
-            70% { opacity: 1; }
-            75% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-        @keyframes fade4 {
-            70% { opacity: 0; }
-            75% { opacity: 1; }
-            95% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
-        /* Heading */
-        h1 {
-            font-size: 3em;
-            margin: 20px 0;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Voting Section */
-        .voting-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            padding: 20px;
-        }
-
-        .candidate {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .candidate img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .vote-btn {
-            background: black;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .vote-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-        }
-
-        /* Vote Count */
-        .vote-count {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
-
-        /* Info Section */
-        .info {
-            margin: 20px auto;
-            width: 80%;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .info h3 {
-            margin: 10px 0;
-        }
-
-        .info ul {
-            text-align: left;
-            padding-left: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who Deserves Nepal’s Throne?</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    /* Background Container */
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    /* Individual Backgrounds */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      opacity: 0;
+    }
+    .background1 {
+      animation: fade1 20s infinite;
+    }
+    .background2 {
+      animation: fade2 20s infinite;
+    }
+    .background3 {
+      animation: fade3 20s infinite;
+    }
+    .background4 {
+      animation: fade4 20s infinite;
+    }
+    /* Fade Animations for Sliding Effect */
+    @keyframes fade1 {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      20% { opacity: 1; }
+      25% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes fade2 {
+      20% { opacity: 0; }
+      25% { opacity: 1; }
+      45% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes fade3 {
+      45% { opacity: 0; }
+      50% { opacity: 1; }
+      70% { opacity: 1; }
+      75% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes fade4 {
+      70% { opacity: 0; }
+      75% { opacity: 1; }
+      95% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    /* Heading */
+    h1 {
+      font-size: 3em;
+      margin: 20px 0;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Voting Section */
+    .voting-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 20px;
+    }
+    .candidate {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    .candidate img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .vote-btn {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .vote-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    }
+    /* Vote Count */
+    .vote-count {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    /* Info Section */
+    .info {
+      margin: 20px auto;
+      width: 80%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .info h3 {
+      margin: 10px 0;
+    }
+    .info ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Background Images with Sliding Effect -->
-    <div class="background-container">
-        <div class="background background1" style="background-image: url('image.jpg');"></div>
-        <div class="background background2" style="background-image: url('kng.jpg');"></div>
-        <div class="background background3" style="background-image: url('img.jpg');"></div>
-        <div class="background background4" style="background-image: url('politician.jpg');"></div>
+  <!-- Background Images with Sliding Effect -->
+  <div class="background-container">
+    <div class="background background1" style="background-image: url('image.jpg');"></div>
+    <div class="background background2" style="background-image: url('kng.jpg');"></div>
+    <div class="background background3" style="background-image: url('img.jpg');"></div>
+    <div class="background background4" style="background-image: url('politician.jpg');"></div>
+  </div>
+
+  <h1>What is your opinion?</h1>
+
+  <!-- Voting Section -->
+  <div class="voting-container">
+    <div class="candidate">
+      <img src="king1.jpg" alt="King Gyanendra" />
+      <h2>King Gyanendra</h2>
+      <button class="vote-btn" onclick="vote('king')">Vote</button>
+      <div class="vote-count" id="king-votes">Votes: 0</div>
     </div>
-
-    <h1>What is your opinion?</h1>
-
-    <!-- Voting Section -->
-    <div class="voting-container">
-        <div class="candidate">
-            <img src="king1.jpg" alt="King Gyanendra">
-            <h2>King Gyanendra</h2>
-            <button class="vote-btn" onclick="vote('king')">Vote</button>
-            <div class="vote-count" id="king-votes">Votes: 0</div>
-        </div>
-        <div class="candidate">
-            <img src="president.jpg" alt="President">
-            <h2>President Ram Chandra Paudel</h2>
-            <button class="vote-btn" onclick="vote('president')">Vote</button>
-            <div class="vote-count" id="president-votes">Votes: 0</div>
-        </div>
+    <div class="candidate">
+      <img src="president.jpg" alt="President" />
+      <h2>President Ram Chandra Paudel</h2>
+      <button class="vote-btn" onclick="vote('president')">Vote</button>
+      <div class="vote-count" id="president-votes">Votes: 0</div>
     </div>
+  </div>
 
-    <!-- Information Section -->
-    <div class="info">
-        <h3>King Gyanendra & The Monarchy</h3>
+  <!-- Information Section -->
+  <div class="info">
+    <h3>King Gyanendra & The Monarchy</h3>
+    <ul>
+      <li><strong>Good Works:</strong>
         <ul>
-            <li><strong>Good Works:</strong>
-                <ul>
-                    <li>Unified Nepal under King Prithvi Narayan Shah, creating a single nation from fragmented states.</li>
-                    <li>Preserved Nepal’s sovereignty against British colonial threats during the Shah dynasty.</li>
-                    <li>Promoted cultural heritage, including festivals, temples, and the Nepali language.</li>
-                    <li>Built infrastructure like the Tribhuvan Highway and early hydropower projects under King Mahendra.</li>
-                    <li>Established Nepal as a global tourism hub, leveraging royal patronage of Everest and heritage sites.</li>
-                    <li>Provided decades of stability, avoiding the chaos of frequent government changes.</li>
-                    <li>Supported rural education and health initiatives through royal trusts.</li>
-                    <li>Symbolized national unity and pride, fostering a strong Nepali identity worldwide.</li>
-                    <li>Established the Royal Nepal Academy to promote arts and culture.</li>
-                    <li>Initiated land reform programs to benefit farmers.</li>
-                </ul>
-            </li>
-            <li><strong>Bad Works:</strong>
-                <ul>
-                    <li>Accused of authoritarian rule (2002-2006), though some argue it was to curb instability.</li>
-                    <li>Royal family faced allegations of mismanaging palace wealth.</li>
-                    <li>Failed to modernize the economy, leading to stagnation.</li>
-                    <li>Concentrated power within the royal family, limiting democratic participation.</li>
-                </ul>
-            </li>
+          <li>Unified Nepal under King Prithvi Narayan Shah, creating a single nation from fragmented states.</li>
+          <li>Preserved Nepal’s sovereignty against British colonial threats during the Shah dynasty.</li>
+          <li>Promoted cultural heritage, including festivals, temples, and the Nepali language.</li>
+          <li>Built infrastructure like the Tribhuvan Highway and early hydropower projects under King Mahendra.</li>
+          <li>Established Nepal as a global tourism hub, leveraging royal patronage of Everest and heritage sites.</li>
+          <li>Provided decades of stability, avoiding the chaos of frequent government changes.</li>
+          <li>Supported rural education and health initiatives through royal trusts.</li>
+          <li>Symbolized national unity and pride, fostering a strong Nepali identity worldwide.</li>
+          <li>Established the Royal Nepal Academy to promote arts and culture.</li>
+          <li>Initiated land reform programs to benefit farmers.</li>
         </ul>
-
-        <h3>Political Parties (Congress, UML, Maoist)</h3>
+      </li>
+      <li><strong>Bad Works:</strong>
         <ul>
-            <li><strong>Good Works:</strong>
-                <ul>
-                    <li>Ended monarchy in 2008, transitioning to a republic.</li>
-                    <li>Some progress in road and hydropower projects.</li>
-                    <li>Implemented policies to increase literacy rates.</li>
-                    <li>Expanded infrastructure in rural areas.</li>
-                    <li>Promoted gender equality through legislation.</li>
-                </ul>
-            </li>
-            <li><strong>Bad Works & Corruption Allegations:</strong>
-                <ul>
-                    <li>Widebody Airbus scandal (UML/NC) squandered millions in taxpayer money.</li>
-                    <li>Maoist insurgency killed over 17,000 people and destroyed infrastructure.</li>
-                    <li>Nepotism and cronyism led to unqualified leaders dominating politics.</li>
-                    <li>Frequent government collapses (over 10 PMs since 2008) stalled development.</li>
-                    <li>Corruption in earthquake relief funds left victims homeless years later.</li>
-                </ul>
-            </li>
+          <li>Accused of authoritarian rule (2002-2006), though some argue it was to curb instability.</li>
+          <li>Royal family faced allegations of mismanaging palace wealth.</li>
+          <li>Failed to modernize the economy, leading to stagnation.</li>
+          <li>Concentrated power within the royal family, limiting democratic participation.</li>
         </ul>
-    </div>
+      </li>
+    </ul>
 
-    <!-- JavaScript for Voting System -->
-   <script>
-        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-          <script>
-  // Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAIrb8FoMFW6VwMNZMAUKFrffAcjbT13Xs",
-    authDomain: "nepalvote.firebaseapp.com",
-    projectId: "nepalvote",
-    storageBucket: "nepalvote.firebasestorage.app",
-    messagingSenderId: "482020780500",
-    appId: "1:482020780500:web:4d7630d4bfdd68b0a6ce41",
-    measurementId: "G-6BJS5XT72G"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  // Initialize Firestore
-  const db = firebase.firestore();
-</script>
-  // Function to vote
-  function vote(candidate) {
-    const voteRef = db.collection('votes').doc(candidate);
-    voteRef.set({
-      count: firebase.firestore.FieldValue.increment(1)
-    }, { merge: true })
-      .then(() => {
+    <h3>Political Parties (Congress, UML, Maoist)</h3>
+    <ul>
+      <li><strong>Good Works:</strong>
+        <ul>
+          <li>Ended monarchy in 2008, transitioning to a republic.</li>
+          <li>Some progress in road and hydropower projects.</li>
+          <li>Implemented policies to increase literacy rates.</li>
+          <li>Expanded infrastructure in rural areas.</li>
+          <li>Promoted gender equality through legislation.</li>
+        </ul>
+      </li>
+      <li><strong>Bad Works & Corruption Allegations:</strong>
+        <ul>
+          <li>Widebody Airbus scandal squandered millions in taxpayer money.</li>
+          <li>Maoist insurgency killed over 17,000 people and destroyed infrastructure.</li>
+          <li>Nepotism and cronyism led to unqualified leaders dominating politics.</li>
+          <li>Frequent government collapses (over 10 PMs since 2008) stalled development.</li>
+          <li>Corruption in earthquake relief funds left victims homeless years later.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Firebase and Voting JavaScript -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getFirestore, doc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+    // Firebase configuration (Note: secure your API key in production)
+    const firebaseConfig = {
+      apiKey: "AIzaSyAIrb8FoMFW6VwMNZMAUKFrffAcjbT13Xs",
+      authDomain: "nepalvote.firebaseapp.com",
+      projectId: "nepalvote",
+      storageBucket: "nepalvote.appspot.com",
+      messagingSenderId: "482020780500",
+      appId: "1:482020780500:web:4d7630d4bfdd68b0a6ce41",
+      measurementId: "G-6BJS5XT72G"
+    };
+
+    // Initialize Firebase and Firestore
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Vote function using Firestore update with increment
+    async function vote(candidate) {
+      const voteRef = doc(db, "votes", candidate);
+      try {
+        await updateDoc(voteRef, {
+          count: increment(1)
+        });
         updateVoteDisplay();
         alert(`You voted for ${candidate === 'king' ? 'King Gyanendra' : 'President Ram Chandra Paudel'}!`);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error voting: ", error);
-      });
-  }
+      }
+    }
 
-  // Function to update vote display
-  function updateVoteDisplay() {
-    db.collection('votes').doc('king').get().then((doc) => {
-      const kingVotes = doc.exists ? doc.data().count : 0;
-      document.getElementById('king-votes').textContent = `Votes: ${kingVotes}`;
-    });
-    db.collection('votes').doc('president').get().then((doc) => {
-      const presidentVotes = doc.exists ? doc.data().count : 0;
-      document.getElementById('president-votes').textContent = `Votes: ${presidentVotes}`;
-    });
-  }
+    // Function to update vote counts displayed on the page
+    async function updateVoteDisplay() {
+      const kingRef = doc(db, "votes", "king");
+      const presidentRef = doc(db, "votes", "president");
+      const kingSnap = await getDoc(kingRef);
+      const presidentSnap = await getDoc(presidentRef);
 
-  // Initial display update when the page loads
-  updateVoteDisplay();
-</script>
-   
- 
-  
-</script>
+      document.getElementById('king-votes').textContent = `Votes: ${kingSnap.exists() ? kingSnap.data().count : 0}`;
+      document.getElementById('president-votes').textContent = `Votes: ${presidentSnap.exists() ? presidentSnap.data().count : 0}`;
+    }
+
+    // Initial vote display update
+    updateVoteDisplay();
+
+    // Expose the vote function to the global scope so that HTML onClick handlers work
+    window.vote = vote;
+  </script>
 </body>
 </html>
