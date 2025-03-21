@@ -238,36 +238,55 @@
     </div>
 
     <!-- JavaScript for Voting System -->
-    <script>
-        // Load votes from localStorage or initialize
-        let votes = JSON.parse(localStorage.getItem('votes')) || { king: 0, president: 0 };
-
-        // Display initial vote counts
+   <script>
+  // Function to vote
+  function vote(candidate) {
+    const voteRef = db.collection('votes').doc(candidate);
+    voteRef.set({
+      count: firebase.firestore.FieldValue.increment(1)
+    }, { merge: true })
+      .then(() => {
         updateVoteDisplay();
+        alert(`You voted for ${candidate === 'king' ? 'King Gyanendra' : 'President Ram Chandra Paudel'}!`);
+      })
+      .catch((error) => {
+        console.error("Error voting: ", error);
+      });
+  }
 
-        // Voting function
-        function vote(candidate) {
-            if (candidate === 'king') {
-                votes.king++;
-            } else if (candidate === 'president') {
-                votes.president++;
-            }
-            // Save votes to localStorage
-            localStorage.setItem('votes', JSON.stringify(votes));
-            // Update the display immediately
-            updateVoteDisplay();
-            alert(`You voted for ${candidate === 'king' ? 'King Gyanendra' : 'President Ram Chandra Paudel'}!`);
-        }
+  // Function to update vote display
+  function updateVoteDisplay() {
+    db.collection('votes').doc('king').get().then((doc) => {
+      const kingVotes = doc.exists ? doc.data().count : 0;
+      document.getElementById('king-votes').textContent = `Votes: ${kingVotes}`;
+    });
+    db.collection('votes').doc('president').get().then((doc) => {
+      const presidentVotes = doc.exists ? doc.data().count : 0;
+      document.getElementById('president-votes').textContent = `Votes: ${presidentVotes}`;
+    });
+  }
 
-        // Function to update vote display
-        function updateVoteDisplay() {
-            document.getElementById('king-votes').textContent = `Votes: ${votes.king}`;
-            document.getElementById('president-votes').textContent = `Votes: ${votes.president}`;
-        }
-    </script>
+  // Initial display update when the page loads
+  updateVoteDisplay();
+</script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
-    <script type="module">
+    <script>
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAIrb8FoMFW6VwMNZMAUKFrffAcjbT13Xs",
+    authDomain: "nepalvote.firebaseapp.com",
+    projectId: "nepalvote",
+    storageBucket: "nepalvote.firebasestorage.app",
+    messagingSenderId: "482020780500",
+    appId: "1:482020780500:web:4d7630d4bfdd68b0a6ce41",
+    measurementId: "G-6BJS5XT72G"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // Initialize Firestore
+  const db = firebase.firestore();
+</script>
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js";
